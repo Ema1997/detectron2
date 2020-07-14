@@ -80,7 +80,6 @@ if __name__ == "__main__":
 
     if args.input:
         if len(args.input) == 1:
-            # 把path中包含的"~"和"~user"转换成用户目录
             args.input = glob.glob(os.path.expanduser(args.input[0]))
             assert args.input, "The input path(s) was not found"
         for path in tqdm.tqdm(args.input, disable=not args.output):

@@ -52,7 +52,6 @@ def launch(main_func, num_gpus_per_machine, num_machines=1, machine_rank=0, dist
                 "file:// is not a reliable init_method in multi-machine jobs. Prefer tcp://"
             )
 
-        # Spawns num_gpus_per_machine processes that run _distributed_worker with args
         mp.spawn(
             _distributed_worker,
             nprocs=num_gpus_per_machine,
